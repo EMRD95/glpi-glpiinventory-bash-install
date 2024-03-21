@@ -112,6 +112,7 @@ info "Installing packages..."
 sleep 1
 apt update
 apt install --yes --no-install-recommends \
+bzip2 \
 nginx \
 mariadb-server \
 perl \
@@ -176,7 +177,7 @@ EOF
 
 function install_glpi()
 {
-info "Downloading and installing GLPI 10.0.12"
+info "Downloading and installing GLPI 10.0.14"
 # Get download link for the latest release
 DOWNLOADLINK=https://github.com/glpi-project/glpi/releases/download/10.0.14/glpi-10.0.14.tgz
 wget -O /tmp/glpi-latest.tgz $DOWNLOADLINK
@@ -184,16 +185,8 @@ tar xzf /tmp/glpi-latest.tgz -C /var/www/html/
 
 info "Downloading and installing glpi-inventory-plugin 1.3.5"
 FUSIONLINK=https://github.com/glpi-project/glpi-inventory-plugin/releases/download/1.3.5/glpi-glpiinventory-1.3.5.tar.bz2
-wget -O /tmp/glpiinventory.tar.bz2 $FUSIONLINK
-
-# Create the plugin directory if it doesn't exist
-mkdir -p /var/www/html/glpi/plugins/glpiinventory
-
-# Extract directly into the correct directory
-tar xjf /tmp/glpiinventory.tar.bz2 -C /var/www/html/glpi/plugins/glpiinventory --strip-components 1
-
-# Check the structure to ensure it's correct
-ls -l /var/www/html/glpi/plugins/glpiinventory
+wget -O /tmp/glpiinventory.tgz $FUSIONLINK
+tar xf /tmp/glpiinventory.tgz -C /var/www/html/glpi/plugins
 
 
 # Setup server block
