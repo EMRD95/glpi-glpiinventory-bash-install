@@ -1,9 +1,9 @@
 # glpi-glpiinventory-bash-install
-bash script to install the latest (02/04/2024) Glpi with Glpi Inventory with nginx server
+bash script to install the latest (03/21/2024) Glpi with Glpi Inventory with nginx server
 
-Tested on Ubuntu 22.04
+Tested on Ubuntu 22.04 Desktop and Server
 
-## Require setting permissions after running the script
+## Might require setting permissions after running the script
 
 sudo chown -R www-data:www-data /var/www/html/glpi
 
