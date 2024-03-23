@@ -13,7 +13,7 @@ curl https://raw.githubusercontent.com/EMRD95/glpi-glpiinventory-bash-install/ma
 
 Tested on Ubuntu 22.04 Desktop and Server
 
-## Common debugging
+## Common debugging (for unsupported OSs)
 
 In case of permission issues
 
@@ -23,7 +23,7 @@ sudo chown -R www-data:www-data /var/www/html/glpi
 ```bash
 sudo chmod -R 775 /var/www/html/glpi
 ```
-# To remove the session.cookie_httponly warning (script already apply this)
+### To remove the session.cookie_httponly warning (script already apply this)
 
 Nginx
 ```bash
@@ -35,7 +35,7 @@ Apache
         sed -i 's/^\s*;\?\s*session\.cookie_httponly\s*=/session.cookie_httponly = On/' /etc/php/8.1/apache2/php.ini &&
         systemctl restart apache2
 ```
-# If you decide to set up HTTPS
+### If you decide to set up HTTPS
 Nginx
 ```bash
     sudo sed -i 's/^\s*;\?\s*session\.cookie_secure\s*=/session.cookie_secure = On/' /etc/php/8.1/fpm/php.ini
