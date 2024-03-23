@@ -222,8 +222,8 @@ echo "*/1 * * * * www-data /usr/bin/php /var/www/html/glpi/front/cron.php &>/dev
 
 function secure_php_sessions() {
     info "Securing PHP sessions..."
-    sed -i 's/;session.cookie_secure =/session.cookie_secure = On/' /etc/php/8.1/fpm/php.ini
-    sed -i 's/;session.cookie_httponly =/session.cookie_httponly = On/' /etc/php/8.1/fpm/php.ini
+    sed -i 's/^\s*;\?\s*session\.cookie_httponly\s*=/session.cookie_httponly = On/' /etc/php/8.1/fpm/php.ini
+    sed -i 's/^\s*;\?\s*session\.cookie_secure\s*=/session.cookie_secure = On/' /etc/php/8.1/fpm/php.ini
     systemctl restart php8.1-fpm
 }
 
