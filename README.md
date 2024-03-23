@@ -14,11 +14,12 @@ sudo bash glpi.sh
 Tested on Ubuntu 22.04 Desktop and Server
 
 ## Might require setting permissions after running the script
-
+```bash
 sudo chown -R www-data:www-data /var/www/html/glpi
-
+```
+```bash
 sudo chmod -R 775 /var/www/html/glpi
-
+```
 ## To remove some warnings (script normally apply this)
 
 ```bash
