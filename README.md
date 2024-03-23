@@ -1,48 +1,49 @@
 # glpi-glpiinventory-bash-install
-bash script to install the latest (03/21/2024) [Glpi](https://github.com/glpi-project/glpi/releases), [Glpi Inventory plugin](https://github.com/glpi-project/glpi-inventory-plugin/releases) and Nginx server
+Bash script to install the latest (03/21/2024) [Glpi](https://github.com/glpi-project/glpi/releases) with [Glpi Inventory plugin](https://github.com/glpi-project/glpi-inventory-plugin/releases) and Nginx or Apache web server.
 
 ## Usage
 
 ```bash
-git clone https://github.com/EMRD95/glpi-glpiinventory-bash-install &&
-
-cd glpi* &&
-
-sudo bash glpi.sh
+wget https://raw.githubusercontent.com/EMRD95/glpi-glpiinventory-bash-install/main/glpi.sh && sudo bash glpi.sh
+```
+Or
+```bash
+curl https://raw.githubusercontent.com/EMRD95/glpi-glpiinventory-bash-install/main/glpi.sh && sudo bash glpi.sh
 ```
 
 Tested on Ubuntu 22.04 Desktop and Server
 
-## Might require setting permissions after running the script (script normally apply this)
+## Common debugging
+
+In case of permission issues
+
 ```bash
 sudo chown -R www-data:www-data /var/www/html/glpi
 ```
 ```bash
 sudo chmod -R 775 /var/www/html/glpi
 ```
-## To remove some warnings (script normally apply this)
+# To remove the session.cookie_httponly warning (script already apply this)
 
+Nginx
 ```bash
     sudo sed -i 's/^\s*;\?\s*session\.cookie_httponly\s*=/session.cookie_httponly = On/' /etc/php/8.1/fpm/php.ini &&
-    sudo sed -i 's/^\s*;\?\s*session\.cookie_secure\s*=/session.cookie_secure = On/' /etc/php/8.1/fpm/php.ini &&
     sudo systemctl restart php8.1-fpm
 ```
-
-#### Or
-
+Apache
 ```bash
-sudo nano /etc/php/8.1/fpm/php.ini
+        sed -i 's/^\s*;\?\s*session\.cookie_httponly\s*=/session.cookie_httponly = On/' /etc/php/8.1/apache2/php.ini &&
+        systemctl restart apache2
 ```
+# If you decide to set up HTTPS
+Nginx
 ```bash
-session.cookie_secure = On
+    sudo sed -i 's/^\s*;\?\s*session\.cookie_secure\s*=/session.cookie_secure = On/' /etc/php/8.1/fpm/php.ini
 ```
+Apache
 ```bash
-session.cookie_httponly = On
+    sudo sed -i 's/^\s*;\?\s*session\.cookie_secure\s*=/session.cookie_secure = On/' /etc/php/8.1/apache2/php.ini
 ```
-```bash
-sudo systemctl restart php8.1-fpm
-```
-
 
 Thanks to [https://github.com/jr0w3/glpi-fusioninventory-bash-install](https://github.com/jr0w3/glpi-fusioninventory-bash-install)
 
