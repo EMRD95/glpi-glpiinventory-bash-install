@@ -18,7 +18,7 @@ wget https://github.com/glpi-project/glpi-agent/releases/download/1.7.1/glpi-age
  ```
 ```bash
 sudo perl glpi-agent-1.7.1-linux-installer.pl \
-    -s http://localhost/plugins/glpiinventory/ \
+    -s http://yourdomain.com/plugins/glpiinventory/ \
     --type=all \
     --service \
     --install \
@@ -27,7 +27,7 @@ sudo glpi-agent
 ```
 The machine should appear in the inventory instantly.
 
-In case of errors, disable and enable back inventory in webui (Administration > Inventory)
+In case of errors, disable and enable back inventory in webui (Administration > Inventory) and set the URL of the application to http://yourdomain.com without "/" at the end in Setup > General.
 
 Tested on Ubuntu 22.04 Desktop and Server
 
