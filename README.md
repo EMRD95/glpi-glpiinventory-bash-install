@@ -1,5 +1,6 @@
 # glpi-glpiinventory-bash-install
 Bash script to automatically install the latest (03/23/2024) version of [Glpi](https://github.com/glpi-project/glpi/releases) (10.0.14) with [Glpi Inventory plugin](https://github.com/glpi-project/glpi-inventory-plugin/releases) (1.3.5) and Nginx OR Apache web server.
+![image](https://github.com/EMRD95/glpi-glpiinventory-bash-install/assets/114953576/825712e7-f64c-4f8b-a807-3957cbdbc57d)
 
 ## Usage
 
