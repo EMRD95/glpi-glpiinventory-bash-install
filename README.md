@@ -44,5 +44,5 @@ sudo systemctl restart php8.1-fpm
 ```
 
 
-Thanks to [https://github.com/jr0w3/GLPI_install_script](https://github.com/jr0w3/GLPI_install_script)https://github.com/jr0w3/GLPI_install_script
+Thanks to [https://github.com/jr0w3/glpi-fusioninventory-bash-install](https://github.com/jr0w3/glpi-fusioninventory-bash-install)https://github.com/jr0w3/glpi-fusioninventory-bash-install
 
