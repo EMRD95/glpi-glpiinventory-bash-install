@@ -42,3 +42,7 @@ session.cookie_httponly = On
 ```bash
 sudo systemctl restart php8.1-fpm
 ```
+
+
+Thanks to [https://github.com/jr0w3/GLPI_install_script](https://github.com/jr0w3/GLPI_install_script)https://github.com/jr0w3/GLPI_install_script
+
