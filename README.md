@@ -10,6 +10,22 @@ Or
 ```bash
 curl https://raw.githubusercontent.com/EMRD95/glpi-glpiinventory-bash-install/main/glpi.sh && sudo bash glpi.sh
 ```
+## Start Inventory
+```bash
+wget https://github.com/glpi-project/glpi-agent/releases/download/1.7.1/glpi-agent-1.7.1-linux-installer.pl
+ ```
+```bash
+sudo perl glpi-agent-1.7.1-linux-installer.pl \
+    -s http://localhost/plugins/glpiinventory/ \
+    --type=all \
+    --service \
+    --install \
+    --runnow
+sudo glpi-agent
+```
+The machine should appear in the inventory instantly.
+
+In case of errors, disable and enable back inventory in webui (Administration > Inventory)
 
 Tested on Ubuntu 22.04 Desktop and Server
 
