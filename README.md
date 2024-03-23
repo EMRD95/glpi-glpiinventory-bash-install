@@ -10,7 +10,7 @@ Or
 ```bash
 curl https://raw.githubusercontent.com/EMRD95/glpi-glpiinventory-bash-install/main/glpi.sh && sudo bash glpi.sh
 ```
-## Start Inventory
+## Start Inventory with [Glpi-agent](https://github.com/glpi-project/glpi-agent/releases)
 ```bash
 wget https://github.com/glpi-project/glpi-agent/releases/download/1.7.1/glpi-agent-1.7.1-linux-installer.pl
  ```
