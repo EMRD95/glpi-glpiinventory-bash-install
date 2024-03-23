@@ -1,5 +1,5 @@
 # glpi-glpiinventory-bash-install
-bash script to install the latest (03/21/2024) [Glpi](https://github.com/glpi-project/glpi/releases), [Glpi Inventory plugin](https://github.com/glpi-project/glpi-inventory-plugin/releases) and nginx server
+bash script to install the latest (03/21/2024) [Glpi](https://github.com/glpi-project/glpi/releases), [Glpi Inventory plugin](https://github.com/glpi-project/glpi-inventory-plugin/releases) and Nginx server
 
 ## Usage
 
